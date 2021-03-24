@@ -35,14 +35,14 @@ def add_ranking(df: pd.DataFrame):
     standing_f = pd.read_csv(train_standings_path)
     for index, row in df.iterrows():
         home_team = row['Home Team']
-        home_index = np.where(standing_f['Team'] == home_team)
-        home_rank = standing_f.at(home_index)['Rk']
+        home_index = np.where(standing_f['Team'] == home_team)[0][0]
+        home_rank = standing_f.at[home_index, 'Rk']
 
         visitor_team = row['Visitor Team']
-        visitor_index = np.where(standing_f['Team'] == visitor_team)
-        visitor_rank = standing_f.at(visitor_index)['Rk']
+        visitor_index = np.where(standing_f['Team'] == visitor_team)[0][0]
+        visitor_rank = standing_f.at[visitor_index, 'Rk']
 
-        row['Home Rank Higher'] = home_rank > visitor_rank
+        df.at[index, 'Home Rank Higher'] = home_rank > visitor_rank
 
 
 def add_streaks(df: pd.DataFrame):
@@ -53,7 +53,6 @@ def add_streaks(df: pd.DataFrame):
     # Did the home and visitor teams win their last game?
     from collections import defaultdict
     win_streak = defaultdict(int)
-
 
     for index, row in df.iterrows():  # Note that this is not the most efficient method
         home_team = row["Home Team"]
@@ -69,63 +68,15 @@ def add_streaks(df: pd.DataFrame):
         else:
             win_streak[home_team] = 0
             win_streak[visitor_team] += 1
-    for index, row in all_stars_df.iterrows():
-        team_allstars_dict[utils.symbol_to_team(row['Team'])] += 1
-
-    for index, row in df.iterrows():
-        home_team = row['Home Team']
-        visitor_team = row['Visitor Team']
-        home_allstars = team_allstars_dict[home_team]
-        visitor_allstars = team_allstars_dict[visitor_team]
-        df.at[index, 'All Stars Home'] = home_allstars
-        df.at[index, 'All Stars Visitor'] = visitor_allstars
-
-
-def add_home_team_won_last(df):
-    who_won_last_match = defaultdict(int)
-    def
-
-
-
-    df["Home Team Won Last"] = 0
-    for index, row in df.iterrows():
-        home_team = row['Home Team']
-        visitor_team = row['Visistor Team']
-
-        # Sort for a consistent ordering
-        teams = tuple(sorted([home_team, visitor_team]))
-        # Parse the row for which team won the last matchup, then add a 1 if the Home Team won
-        result = 1 if last_game_winner[teams] == row['Home Team'] else 0
-
-        # Update record for next matchup
-        winner = row['Home Team'] if row['Home Win'] else row['Visitor Team']
-        last_game_winner[teams] = winner
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def get_data_frame(data_path):
     df = pd.read_csv(data_path)
 
     # add winner data
     df['Home Win'] = df['Home Points'] > df['Visitor Points']
+
     add_ranking(df)
     add_streaks(df)
-
-
     # TODO: add:
     #   1. winning streaks (int) [<winning streaks home>, <winning streaks visitor>]
     #   1. winning streaks (int) [<winning strikes home>, <winning strikes visitor>]
@@ -133,6 +84,7 @@ def get_data_frame(data_path):
     #   3. home team ranks higher (bool)
     #   4. home team won last time these teams met (bool)
     #   5. home last win, visitor last win [bool, bool]
+
     #   6. home team usually wins at home (maybe)
 
     labels = df['Home Win'].values
