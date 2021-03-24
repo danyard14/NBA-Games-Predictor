@@ -32,38 +32,17 @@ def add_number_of_allstar_players(df, all_star_players_path):
 
 def add_home_team_won_last(df):
     who_won_last_match = defaultdict(int)
-    def
-
-
-
     df["Home Team Won Last"] = 0
     for index, row in df.iterrows():
-        home_team = row['Home Team']
-        visitor_team = row['Visistor Team']
-
-        # Sort for a consistent ordering
-        teams = tuple(sorted([home_team, visitor_team]))
-        # Parse the row for which team won the last matchup, then add a 1 if the Home Team won
-        result = 1 if last_game_winner[teams] == row['Home Team'] else 0
-
-        # Update record for next matchup
-        winner = row['Home Team'] if row['Home Win'] else row['Visitor Team']
-        last_game_winner[teams] = winner
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        home_team = row["Home Team"]
+        visitor_team = row["Visitor Team"]
+        matchup = tuple(sorted([home_team, visitor_team]))
+        if who_won_last_match[matchup] == row["Home Team"]:
+            df.at[index, "Home Team Won Last"] = 1
+        else:
+            df.at[index, "Home Team Won Last"] = 0
+        winner = row["Home Team"] if row["Home Win"] else row["Visitor Team"]
+        who_won_last_match[matchup] = winner
 
 
 def get_data_frame(data_path):
@@ -81,3 +60,4 @@ def get_data_frame(data_path):
     #   6. home team usually wins at home (maybe)
 
     labels = df['Home Win'].values
+    return df
