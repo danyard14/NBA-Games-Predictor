@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 from test import test_decision_tree
 
+
 def train_decision_tree(train_data_path: str):
     df = pd.read_csv(train_data_path)
 

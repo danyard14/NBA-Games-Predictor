@@ -5,27 +5,27 @@ from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
 
-df = pd.read_csv('../Data/train_data/17-18_allgames.csv')
-
-from collections import defaultdict
-
-win_streak = defaultdict(int)
-print(2)
-
-for index, row in df.iterrows():  # Note that this is not the most efficient method
-    home_team = row["Home Team"]
-    visitor_team = row["Visitor Team"]
-    row["Home Win Streak"] = win_streak[home_team]
-    row["Visitor Win Streak"] = win_streak[visitor_team]
-    df.loc[index] = row
-
-    # Set current win streak
-    if row["Home Win"]:
-        win_streak[home_team] += 1
-        win_streak[visitor_team] = 0
-    else:
-        win_streak[home_team] = 0
-        win_streak[visitor_team] += 1
+# df = pd.read_csv('../Data/train_data/17-18_allgames.csv')
+#
+# from collections import defaultdict
+#
+# win_streak = defaultdict(int)
+# print(2)
+#
+# for index, row in df.iterrows():  # Note that this is not the most efficient method
+#     home_team = row["Home Team"]
+#     visitor_team = row["Visitor Team"]
+#     row["Home Win Streak"] = win_streak[home_team]
+#     row["Visitor Win Streak"] = win_streak[visitor_team]
+#     df.loc[index] = row
+#
+#     # Set current win streak
+#     if row["Home Win"]:
+#         win_streak[home_team] += 1
+#         win_streak[visitor_team] = 0
+#     else:
+#         win_streak[home_team] = 0
+#         win_streak[visitor_team] += 1
 
 # df['Home Win'] = df['Home Points'] > df['Visitor Points']
 # labels = df['Home Win'].values
@@ -62,3 +62,5 @@ for index, row in df.iterrows():  # Note that this is not the most efficient met
 
 # Print results
 # print("F1: {0:.4f}%".format(np.mean(scores) * 100))
+import os
+print(os.getcwd())
