@@ -32,6 +32,7 @@ def add_number_of_allstar_players(df, all_star_players_path):
 
 def add_ranking(df: pd.DataFrame):
     train_standings_path = '../Data/auxilary_data/17-18_standings.csv'
+    df['Home Rank Higher'] = False
     standing_f = pd.read_csv(train_standings_path)
     for index, row in df.iterrows():
         home_team = row['Home Team']
@@ -93,6 +94,9 @@ def get_data_frame(data_path):
 
     add_ranking(df)
     add_streaks(df)
+    add_home_team_won_last(df)
+    add_number_of_allstar_players(df, '../Data/auxilary_data/17-18_allstars.csv')
+
     # TODO: add:
     #   1. winning streaks (int) [<winning streaks home>, <winning streaks visitor>]
     #   1. winning streaks (int) [<winning strikes home>, <winning strikes visitor>]
@@ -104,7 +108,8 @@ def get_data_frame(data_path):
     #   6. home team usually wins at home (maybe)
 
     labels = df['Home Win'].values
-    return df
+    return df, labels
+
 
 if __name__ == '__main__':
     get_data_frame('../Data/train_data/17-18_allgames.csv')
