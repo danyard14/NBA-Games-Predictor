@@ -69,6 +69,22 @@ def add_streaks(df: pd.DataFrame):
             win_streak[home_team] = 0
             win_streak[visitor_team] += 1
 
+
+def add_home_team_won_last(df):
+    who_won_last_match = defaultdict(int)
+    df["Home Team Won Last"] = 0
+    for index, row in df.iterrows():
+        home_team = row["Home Team"]
+        visitor_team = row["Visitor Team"]
+        matchup = tuple(sorted([home_team, visitor_team]))
+        if who_won_last_match[matchup] == row["Home Team"]:
+            df.at[index, "Home Team Won Last"] = 1
+        else:
+            df.at[index, "Home Team Won Last"] = 0
+        winner = row["Home Team"] if row["Home Win"] else row["Visitor Team"]
+        who_won_last_match[matchup] = winner
+
+
 def get_data_frame(data_path):
     df = pd.read_csv(data_path)
 
@@ -88,6 +104,7 @@ def get_data_frame(data_path):
     #   6. home team usually wins at home (maybe)
 
     labels = df['Home Win'].values
+    return df
 
 if __name__ == '__main__':
     get_data_frame('../Data/train_data/17-18_allgames.csv')
