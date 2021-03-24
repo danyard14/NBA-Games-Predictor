@@ -6,6 +6,8 @@ def symbol_to_team(symbol):
         return "Milwaukee Bucks"
     if symbol == "TOR":
         return "Toronto Raptors"
+    if symbol == "GSW":
+        return "Golden State Warriors"
     if symbol == "DEN":
         return "Denver Nuggets"
     if symbol == "HOU":
