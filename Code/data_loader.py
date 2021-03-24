@@ -1,5 +1,4 @@
 from abc import ABC
-from torch.utils.data import Dataset, DataLoader
 import glob
 import pandas
 import pandas as pd
@@ -7,11 +6,15 @@ import pandas as pd
 data_train_path = '../Data/train_data/17-18_allgames.csv'
 
 
-class GamesDataset(Dataset, ABC):
-    def __init__(self, data_path):
-        super(GamesDataset, self).__init__()
-        self.data = None
-        self.labels = None
+###################################### RICH DATA FRAME FUNCTIONS ######################################
+
+def get_number_of_allstar_players(df, all_star_players_path):
+    nba_teams = df['Home Team'].values
+    all_stars_df = pd.read_csv(all_star_players_path)
+    nba_teams_symbols = all_stars_df['Team'].values
+    team_allstars_dict = dict()
+    for
+
 
 
 def add_streaks(df: pd.DataFrame):
@@ -54,6 +57,4 @@ def get_data_frame(data_path):
     #   5. home last win, visitor last win [bool, bool]
     #   6. home team usually wins at home (maybe)
 
-
     labels = df['Home Win'].values
-
