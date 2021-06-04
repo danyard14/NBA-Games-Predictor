@@ -1,10 +1,9 @@
-from abc import ABC
-import glob
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 import numpy as np
-import pandas
 import pandas as pd
 from utils import utils
 from collections import defaultdict
+
 data_train_path = '../Data/train_data/17-18_allgames.csv'
 
 
@@ -30,9 +29,10 @@ def add_number_of_allstar_players(df, all_star_players_path):
         df.at[index, 'All Stars Home'] = home_allstars
         df.at[index, 'All Stars Visitor'] = visitor_allstars
 
-def add_ranking(df: pd.DataFrame):
-    train_standings_path = '../Data/auxilary_data/17-18_standings.csv'
-    df['Home Rank Higher'] = False
+
+def add_ranking(df: pd.DataFrame, prev_year_standings_path: str):
+    train_standings_path = prev_year_standings_path
+    df['Home Rank Higher'] = 0
     standing_f = pd.read_csv(train_standings_path)
     for index, row in df.iterrows():
         home_team = row['Home Team']
@@ -43,7 +43,10 @@ def add_ranking(df: pd.DataFrame):
         visitor_index = np.where(standing_f['Team'] == visitor_team)[0][0]
         visitor_rank = standing_f.at[visitor_index, 'Rk']
 
-        df.at[index, 'Home Rank Higher'] = home_rank > visitor_rank
+        if home_rank > visitor_rank:
+            df.at[index, 'Home Rank Higher'] = 1
+        else:
+            df.at[index, 'Home Rank Higher'] = 0
 
 
 def add_streaks(df: pd.DataFrame):
@@ -51,7 +54,6 @@ def add_streaks(df: pd.DataFrame):
     df["Home Win Streak"] = 0
     df["Visitor Win Streak"] = 0
 
-    # Did the home and visitor teams win their last game?
     from collections import defaultdict
     win_streak = defaultdict(int)
 
@@ -69,6 +71,7 @@ def add_streaks(df: pd.DataFrame):
         else:
             win_streak[home_team] = 0
             win_streak[visitor_team] += 1
+    a = 5
 
 
 def add_home_team_won_last(df):
@@ -86,30 +89,32 @@ def add_home_team_won_last(df):
         who_won_last_match[matchup] = winner
 
 
-def get_data_frame(data_path):
+def get_data_frame(data_path: str, allstar_path: str, prev_year_standing_path: str):
     df = pd.read_csv(data_path)
 
     # add winner data
     df['Home Win'] = df['Home Points'] > df['Visitor Points']
 
-    add_ranking(df)
+    add_ranking(df, prev_year_standing_path)
     add_streaks(df)
     add_home_team_won_last(df)
-    add_number_of_allstar_players(df, '../Data/auxilary_data/17-18_allstars.csv')
-
-    # TODO: add:
-    #   1. winning streaks (int) [<winning streaks home>, <winning streaks visitor>]
-    #   1. winning streaks (int) [<winning strikes home>, <winning strikes visitor>]
-    #   2. amount of all star players for each team (int) [<all star home>, <all star visitor>]
-    #   3. home team ranks higher (bool)
-    #   4. home team won last time these teams met (bool)
-    #   5. home last win, visitor last win [bool, bool]
-
-    #   6. home team usually wins at home (maybe)
-
+    add_number_of_allstar_players(df, allstar_path)
     labels = df['Home Win'].values
     return df, labels
 
 
-if __name__ == '__main__':
-    get_data_frame('../Data/train_data/17-18_allgames.csv')
+def encode_data(data_path: str, allstar_path: str, prev_year_standings_path: str):
+    df, labels = get_data_frame(data_path, allstar_path, prev_year_standings_path)
+    # x_enhanced = df[['Home Team Won Last', 'All Stars Home', 'All Stars Visitor', 'Home Rank Higher', 'Home Win Streak',
+    #                  'Visitor Win Streak']].values
+    x_enhanced = df[['Home Team Won Last', 'All Stars Home', 'All Stars Visitor']].values
+
+    encoding = LabelEncoder()
+    encoding.fit(df["Home Team"].values)
+    home_teams = encoding.transform(df["Home Team"].values)
+    visitor_teams = encoding.transform(df["Visitor Team"].values)
+    x_teams = np.vstack([home_teams, visitor_teams]).T
+    one_hot = OneHotEncoder()
+    x_teams = one_hot.fit_transform(x_teams).todense()
+    x_all = np.hstack([x_enhanced, x_teams])
+    return x_all, labels

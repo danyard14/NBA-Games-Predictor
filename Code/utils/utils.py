@@ -1,4 +1,3 @@
-
 def symbol_to_team(symbol):
     if symbol == "CLE":
         return "Cleveland Cavaliers"
@@ -28,7 +27,7 @@ def symbol_to_team(symbol):
         return "Los Angeles Clippers"
     if symbol == "SAS":
         return "San Antonio Spurs"
-    if symbol == "BKN":
+    if symbol == "BRK":
         return "Brooklyn Nets"
     if symbol == "ORL":
         return "Orlando Magic"

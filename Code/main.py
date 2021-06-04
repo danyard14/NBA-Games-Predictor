@@ -1,8 +1,6 @@
-import pandas as pd
-import data_loader
-import os
+from train_test import train_decision_tree, test_decision_tree
+from utils.names import *
 
-print(os.getcwd())
-df = data_loader.get_data_frame('../Data/train_data/17-18_allgames.csv')
-data_loader.add_home_team_won_last(df)
-print(df.head(250))
+if __name__ == '__main__':
+    decision_tree = train_decision_tree(TRAIN_DATA_PATH, TRAIN_ALLSTAR_PATH, TRAIN_STANDINGS_PATH)
+    test_decision_tree(decision_tree, TEST_DATA_PATH, TEST_ALLSTAR_PATH, TEST_STANDINGS_PATH)
