@@ -82,7 +82,7 @@ def validate(net: NeuralNetwork, X_test, Y_test):
 
 if __name__ == '__main__':
     num_layers = [1, 3, 5, 7, 10]
-    epochs = [50, 100, 150, 200]
+    epochs = [50, 100, 150]
     batch_sizes = [1, 10, 15, 20]
     lrs = [0.01, 0.001, 0.0001]
     best_accuracy = 0
