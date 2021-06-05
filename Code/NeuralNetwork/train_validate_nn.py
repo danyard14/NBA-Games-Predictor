@@ -1,7 +1,7 @@
 import math
-
 import numpy as np
 import scipy.io as sio
+from torch import optim
 import matplotlib.pyplot as plt
 from network import *
 from optimizers import *
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     lrs = [0.01, 0.001, 0.0001]
     best_accuracy = 0
     best_params = None
-    functions = [ReLU, tanh]
+    functions = [tanh]
     for function in functions:
         for num_layer in num_layers:
             for epoch in epochs:

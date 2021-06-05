@@ -1,7 +1,7 @@
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 import numpy as np
 import pandas as pd
-from utils import utils
+from Utils import utils
 from collections import defaultdict
 
 data_train_path = '../Data/train_data/17-18_allgames.csv'
@@ -116,4 +116,4 @@ def encode_data(data_path: str, allstar_path: str, prev_year_standings_path: str
     one_hot = OneHotEncoder()
     x_teams = one_hot.fit_transform(x_teams).todense()
     x_all = np.hstack([x_enhanced, x_teams])
-    return x_teams, labels
+    return x_all, labels

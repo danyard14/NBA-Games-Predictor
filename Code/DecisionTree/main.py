@@ -1,5 +1,5 @@
 from train_test import train_decision_tree, test_decision_tree
-from utils.names import *
+from Utils.names import *
 
 if __name__ == '__main__':
     for criterion in ["gini", "entropy"]:
