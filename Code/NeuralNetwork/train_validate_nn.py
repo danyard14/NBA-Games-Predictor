@@ -1,7 +1,4 @@
-import math
-import numpy as np
-import scipy.io as sio
-from torch import optim
+
 import matplotlib.pyplot as plt
 from network import *
 from optimizers import *
