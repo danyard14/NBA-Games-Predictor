@@ -1,13 +1,14 @@
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 import numpy as np
 import pandas as pd
-from utils import utils
+from Utils import utils
 from collections import defaultdict
 
 data_train_path = '../Data/train_data/17-18_allgames.csv'
 
 
 ###################################### RICH DATA FRAME FUNCTIONS ######################################
+
 
 def add_number_of_allstar_players(df, all_star_players_path):
     nba_teams = df['Home Team'].values
@@ -105,10 +106,8 @@ def get_data_frame(data_path: str, allstar_path: str, prev_year_standing_path: s
 
 def encode_data(data_path: str, allstar_path: str, prev_year_standings_path: str):
     df, labels = get_data_frame(data_path, allstar_path, prev_year_standings_path)
-    # x_enhanced = df[['Home Team Won Last', 'All Stars Home', 'All Stars Visitor', 'Home Rank Higher', 'Home Win Streak',
-    #                  'Visitor Win Streak']].values
-    x_enhanced = df[['Home Team Won Last', 'All Stars Home', 'All Stars Visitor']].values
-
+    x_enhanced = df[['Home Team Won Last', 'All Stars Home', 'All Stars Visitor', 'Home Rank Higher', 'Home Win Streak',
+                     'Visitor Win Streak']].values
     encoding = LabelEncoder()
     encoding.fit(df["Home Team"].values)
     home_teams = encoding.transform(df["Home Team"].values)
