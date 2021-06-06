@@ -12,7 +12,7 @@ from Utils.names import *
 def boolean_to_one_hot_torch(Y):
     one_hot = torch.zeros(Y.shape[0], 2)
     for i, true_false in enumerate(Y):
-        if true_false is True:
+        if true_false[0].item() is True:
             one_hot[i] = torch.tensor([0, 1])
         else:
             one_hot[i] = torch.tensor([1, 0])
@@ -48,8 +48,7 @@ def train_pytorch_nn(function_object, num_layers, epochs, batch_size, lr):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            training_accuracy[epoch] += get_acc(preds, Y_batch)
-            print(loss.item())
+            training_accuracy[epoch] += get_acc(torch.transpose(preds, 0, 1), torch.transpose(Y_batch, 0, 1))
         # UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
         #   loss = cross_entropy(preds, torch.tensor(Y_batch.argmax(1)))
         losses[epoch] /= (m // batch_size)
@@ -61,8 +60,9 @@ def train_pytorch_nn(function_object, num_layers, epochs, batch_size, lr):
 
 def validate_torch_nn(network: TorchNetwork, X_test, Y_test):
     network.eval()
-    out = network.forward(X_test)
-    acc = get_acc(out, Y_test)
+    out = network(torch.transpose(X_test.float(), 0, 1))
+    acc = get_acc(torch.transpose(out, 0, 1), Y_test)
+    network.train()
     return acc
 
 
