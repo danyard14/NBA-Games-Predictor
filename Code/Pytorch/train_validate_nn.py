@@ -67,7 +67,9 @@ def validate_torch_nn(network: TorchNetwork, X_test, Y_test):
 
 
 if __name__ == '__main__':
-    num_layers = [3, 5, 7, 10]
+    print(torch.cuda.is_available())
+    f = open("outputs.txt", "a")
+    num_layers = [1, 3, 5, 7]
     epochs = [50, 100, 150]
     batch_sizes = [1, 10, 15, 20]
     lrs = [0.01, 0.001, 0.0001]
@@ -80,12 +82,15 @@ if __name__ == '__main__':
                 for batch_size in batch_sizes:
                     for lr in lrs:
                         print(str(function_object), num_layer, epoch, batch_size, lr)
+                        f.write(str(function_object) + "," + str(num_layer) + "," + str(epoch) + "," + str(batch_size) + "," + str(lr) + "\n")
                         accuracy = train_pytorch_nn(function_object, num_layer, epoch, batch_size, lr)
                         print("Accuracy=", accuracy)
+                        f.write("Accuracy="+str(accuracy) + "\n")
                         if accuracy > best_accuracy:
                             best_accuracy = accuracy
                             best_params = (num_layer, epoch, batch_size, lr)
     print("Best accuracy: ", best_accuracy, " Achieved with: ", best_params)
+    f.close()
     # plt.show()
 
 # for batch in train_loader: # Get Batch
