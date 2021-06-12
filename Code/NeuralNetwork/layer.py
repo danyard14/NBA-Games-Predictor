@@ -52,7 +52,7 @@ class SoftMaxLayer(Layer):
     def __init__(self, in_dimensions, num_of_classes):
         """
         :param in_dimensions: dimensions of input
-        :param out_dimensions: dimensions of output
+        :param num_of_classes: dimensions of output
         """
         super(SoftMaxLayer, self).__init__(in_dimensions, num_of_classes)
         self.activation = lambda x: x

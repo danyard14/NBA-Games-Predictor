@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from torch.nn import ReLU
+from torch.nn import ReLU, Tanh
 from torch.nn.functional import cross_entropy
 
 import data_loader
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     lrs = [0.01, 0.001, 0.0001]
     best_accuracy = 0
     best_params = None
-    function_objects = [ReLU, torch.tanh]
+    function_objects = [Tanh]
     for function_object in function_objects:
         for num_layer in num_layers:
             for epoch in epochs:
