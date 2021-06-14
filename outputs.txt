@@ -1,0 +1,289 @@
+<class 'torch.nn.modules.activation.ReLU'>,1,50,1,0.01
+Accuracy=0.6446826051112943
+<class 'torch.nn.modules.activation.ReLU'>,1,50,1,0.001
+Accuracy=0.6380873866446826
+<class 'torch.nn.modules.activation.ReLU'>,1,50,1,0.0001
+Accuracy=0.6092333058532564
+<class 'torch.nn.modules.activation.ReLU'>,1,50,10,0.01
+Accuracy=0.640560593569662
+<class 'torch.nn.modules.activation.ReLU'>,1,50,10,0.001
+Accuracy=0.6084089035449299
+<class 'torch.nn.modules.activation.ReLU'>,1,50,10,0.0001
+Accuracy=0.5828524319868096
+<class 'torch.nn.modules.activation.ReLU'>,1,50,15,0.01
+Accuracy=0.6281945589447651
+<class 'torch.nn.modules.activation.ReLU'>,1,50,15,0.001
+Accuracy=0.6141797197032152
+<class 'torch.nn.modules.activation.ReLU'>,1,50,15,0.0001
+Accuracy=0.19291014014839242
+<class 'torch.nn.modules.activation.ReLU'>,1,50,20,0.01
+Accuracy=0.6273701566364386
+<class 'torch.nn.modules.activation.ReLU'>,1,50,20,0.001
+Accuracy=0.6257213520197856
+<class 'torch.nn.modules.activation.ReLU'>,1,50,20,0.0001
+Accuracy=0.4427040395713108
+<class 'torch.nn.modules.activation.ReLU'>,1,100,1,0.01
+Accuracy=0.6471558120362737
+<class 'torch.nn.modules.activation.ReLU'>,1,100,1,0.001
+Accuracy=0.6455070074196207
+<class 'torch.nn.modules.activation.ReLU'>,1,100,1,0.0001
+Accuracy=0.6117065127782357
+<class 'torch.nn.modules.activation.ReLU'>,1,100,10,0.01
+Accuracy=0.6496290189612531
+<class 'torch.nn.modules.activation.ReLU'>,1,100,10,0.001
+Accuracy=0.6125309150865622
+<class 'torch.nn.modules.activation.ReLU'>,1,100,10,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,1,100,15,0.01
+Accuracy=0.642209398186315
+<class 'torch.nn.modules.activation.ReLU'>,1,100,15,0.001
+Accuracy=0.6100577081615829
+<class 'torch.nn.modules.activation.ReLU'>,1,100,15,0.0001
+Accuracy=0.5779060181368508
+<class 'torch.nn.modules.activation.ReLU'>,1,100,20,0.01
+Accuracy=0.6380873866446826
+<class 'torch.nn.modules.activation.ReLU'>,1,100,20,0.001
+Accuracy=0.6125309150865622
+<class 'torch.nn.modules.activation.ReLU'>,1,100,20,0.0001
+Accuracy=0.4105523495465787
+<class 'torch.nn.modules.activation.ReLU'>,1,150,1,0.01
+Accuracy=0.6488046166529267
+<class 'torch.nn.modules.activation.ReLU'>,1,150,1,0.001
+Accuracy=0.6471558120362737
+<class 'torch.nn.modules.activation.ReLU'>,1,150,1,0.0001
+Accuracy=0.6174773289365211
+<class 'torch.nn.modules.activation.ReLU'>,1,150,10,0.01
+Accuracy=0.6504534212695795
+<class 'torch.nn.modules.activation.ReLU'>,1,150,10,0.001
+Accuracy=0.6240725474031328
+<class 'torch.nn.modules.activation.ReLU'>,1,150,10,0.0001
+Accuracy=0.59439406430338
+<class 'torch.nn.modules.activation.ReLU'>,1,150,15,0.01
+Accuracy=0.6496290189612531
+<class 'torch.nn.modules.activation.ReLU'>,1,150,15,0.001
+Accuracy=0.6158285243198681
+<class 'torch.nn.modules.activation.ReLU'>,1,150,15,0.0001
+Accuracy=0.5869744435284419
+<class 'torch.nn.modules.activation.ReLU'>,1,150,20,0.01
+Accuracy=0.6463314097279472
+<class 'torch.nn.modules.activation.ReLU'>,1,150,20,0.001
+Accuracy=0.6026380873866447
+<class 'torch.nn.modules.activation.ReLU'>,1,150,20,0.0001
+Accuracy=0.5572959604286892
+<class 'torch.nn.modules.activation.ReLU'>,3,50,1,0.01
+Accuracy=0.6380873866446826
+<class 'torch.nn.modules.activation.ReLU'>,3,50,1,0.001
+Accuracy=0.6026380873866447
+<class 'torch.nn.modules.activation.ReLU'>,3,50,1,0.0001
+Accuracy=0.5985160758450123
+<class 'torch.nn.modules.activation.ReLU'>,3,50,10,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,3,50,10,0.001
+Accuracy=0.6084089035449299
+<class 'torch.nn.modules.activation.ReLU'>,3,50,10,0.0001
+Accuracy=0.4245671887881286
+<class 'torch.nn.modules.activation.ReLU'>,3,50,15,0.01
+Accuracy=0.6356141797197032
+<class 'torch.nn.modules.activation.ReLU'>,3,50,15,0.001
+Accuracy=0.40643033800494643
+<class 'torch.nn.modules.activation.ReLU'>,3,50,15,0.0001
+Accuracy=0.562242374278648
+<class 'torch.nn.modules.activation.ReLU'>,3,50,20,0.01
+Accuracy=0.6199505358615004
+<class 'torch.nn.modules.activation.ReLU'>,3,50,20,0.001
+Accuracy=0.5993404781533388
+<class 'torch.nn.modules.activation.ReLU'>,3,50,20,0.0001
+Accuracy=0.5243198680956307
+<class 'torch.nn.modules.activation.ReLU'>,3,100,1,0.01
+Accuracy=0.6347897774113768
+<class 'torch.nn.modules.activation.ReLU'>,3,100,1,0.001
+Accuracy=0.6455070074196207
+<class 'torch.nn.modules.activation.ReLU'>,3,100,1,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,3,100,10,0.01
+Accuracy=0.6397361912613355
+<class 'torch.nn.modules.activation.ReLU'>,3,100,10,0.001
+Accuracy=0.6125309150865622
+<class 'torch.nn.modules.activation.ReLU'>,3,100,10,0.0001
+Accuracy=0.5309150865622424
+<class 'torch.nn.modules.activation.ReLU'>,3,100,15,0.01
+Accuracy=0.6446826051112943
+<class 'torch.nn.modules.activation.ReLU'>,3,100,15,0.001
+Accuracy=0.6092333058532564
+<class 'torch.nn.modules.activation.ReLU'>,3,100,15,0.0001
+Accuracy=0.59439406430338
+<class 'torch.nn.modules.activation.ReLU'>,3,100,20,0.01
+Accuracy=0.6339653751030503
+<class 'torch.nn.modules.activation.ReLU'>,3,100,20,0.001
+Accuracy=0.6001648804616653
+<class 'torch.nn.modules.activation.ReLU'>,3,100,20,0.0001
+Accuracy=0.46166529266281947
+<class 'torch.nn.modules.activation.ReLU'>,3,150,1,0.01
+Accuracy=0.6364385820280297
+<class 'torch.nn.modules.activation.ReLU'>,3,150,1,0.001
+Accuracy=0.6356141797197032
+<class 'torch.nn.modules.activation.ReLU'>,3,150,1,0.0001
+Accuracy=0.6183017312448474
+<class 'torch.nn.modules.activation.ReLU'>,3,150,10,0.01
+Accuracy=0.638911788953009
+<class 'torch.nn.modules.activation.ReLU'>,3,150,10,0.001
+Accuracy=0.6273701566364386
+<class 'torch.nn.modules.activation.ReLU'>,3,150,10,0.0001
+Accuracy=0.605111294311624
+<class 'torch.nn.modules.activation.ReLU'>,3,150,15,0.01
+Accuracy=0.6356141797197032
+<class 'torch.nn.modules.activation.ReLU'>,3,150,15,0.001
+Accuracy=0.6042868920032977
+<class 'torch.nn.modules.activation.ReLU'>,3,150,15,0.0001
+Accuracy=0.5968672712283595
+<class 'torch.nn.modules.activation.ReLU'>,3,150,20,0.01
+Accuracy=0.638911788953009
+<class 'torch.nn.modules.activation.ReLU'>,3,150,20,0.001
+Accuracy=0.6034624896949712
+<class 'torch.nn.modules.activation.ReLU'>,3,150,20,0.0001
+Accuracy=0.6117065127782357
+<class 'torch.nn.modules.activation.ReLU'>,5,50,1,0.01
+Accuracy=0.6281945589447651
+<class 'torch.nn.modules.activation.ReLU'>,5,50,1,0.001
+Accuracy=0.6240725474031328
+<class 'torch.nn.modules.activation.ReLU'>,5,50,1,0.0001
+Accuracy=0.5985160758450123
+<class 'torch.nn.modules.activation.ReLU'>,5,50,10,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,50,10,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,50,10,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,50,15,0.01
+Accuracy=0.6075845012366035
+<class 'torch.nn.modules.activation.ReLU'>,5,50,15,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,50,15,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,5,50,20,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,50,20,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,5,50,20,0.0001
+Accuracy=0.5968672712283595
+<class 'torch.nn.modules.activation.ReLU'>,5,100,1,0.01
+Accuracy=0.6281945589447651
+<class 'torch.nn.modules.activation.ReLU'>,5,100,1,0.001
+Accuracy=0.6347897774113768
+<class 'torch.nn.modules.activation.ReLU'>,5,100,1,0.0001
+Accuracy=0.597691673536686
+<class 'torch.nn.modules.activation.ReLU'>,5,100,10,0.01
+Accuracy=0.6323165704863973
+<class 'torch.nn.modules.activation.ReLU'>,5,100,10,0.001
+Accuracy=0.5993404781533388
+<class 'torch.nn.modules.activation.ReLU'>,5,100,10,0.0001
+Accuracy=0.5968672712283595
+<class 'torch.nn.modules.activation.ReLU'>,5,100,15,0.01
+Accuracy=0.6397361912613355
+<class 'torch.nn.modules.activation.ReLU'>,5,100,15,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,100,15,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,5,100,20,0.01
+Accuracy=0.6380873866446826
+<class 'torch.nn.modules.activation.ReLU'>,5,100,20,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,100,20,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,5,150,1,0.01
+Accuracy=0.638911788953009
+<class 'torch.nn.modules.activation.ReLU'>,5,150,1,0.001
+Accuracy=0.6257213520197856
+<class 'torch.nn.modules.activation.ReLU'>,5,150,1,0.0001
+Accuracy=0.6059356966199505
+<class 'torch.nn.modules.activation.ReLU'>,5,150,10,0.01
+Accuracy=0.6430338004946414
+<class 'torch.nn.modules.activation.ReLU'>,5,150,10,0.001
+Accuracy=0.606760098928277
+<class 'torch.nn.modules.activation.ReLU'>,5,150,10,0.0001
+Accuracy=0.6001648804616653
+<class 'torch.nn.modules.activation.ReLU'>,5,150,15,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,150,15,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,5,150,15,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,5,150,20,0.01
+Accuracy=0.6413849958779885
+<class 'torch.nn.modules.activation.ReLU'>,5,150,20,0.001
+Accuracy=0.596042868920033
+<class 'torch.nn.modules.activation.ReLU'>,5,150,20,0.0001
+Accuracy=0.597691673536686
+<class 'torch.nn.modules.activation.ReLU'>,7,50,1,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,50,1,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,50,1,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,50,10,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,50,10,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,50,10,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,50,15,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,50,15,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,50,15,0.0001
+Accuracy=0.596042868920033
+<class 'torch.nn.modules.activation.ReLU'>,7,50,20,0.01
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,50,20,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,50,20,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,100,1,0.01
+Accuracy=0.6306677658697445
+<class 'torch.nn.modules.activation.ReLU'>,7,100,1,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,100,1,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,100,10,0.01
+Accuracy=0.6356141797197032
+<class 'torch.nn.modules.activation.ReLU'>,7,100,10,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,100,10,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,100,15,0.01
+Accuracy=0.6323165704863973
+<class 'torch.nn.modules.activation.ReLU'>,7,100,15,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,100,15,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,100,20,0.01
+Accuracy=0.6084089035449299
+<class 'torch.nn.modules.activation.ReLU'>,7,100,20,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,100,20,0.0001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,150,1,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,150,1,0.001
+Accuracy=0.629843363561418
+<class 'torch.nn.modules.activation.ReLU'>,7,150,1,0.0001
+Accuracy=0.5968672712283595
+<class 'torch.nn.modules.activation.ReLU'>,7,150,10,0.01
+Accuracy=0.6479802143446002
+<class 'torch.nn.modules.activation.ReLU'>,7,150,10,0.001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,150,10,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,150,15,0.01
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,150,15,0.001
+Accuracy=0.5952184666117065
+<class 'torch.nn.modules.activation.ReLU'>,7,150,15,0.0001
+Accuracy=0.4047815333882935
+<class 'torch.nn.modules.activation.ReLU'>,7,150,20,0.01
+Accuracy=0.6331409727947238
+<class 'torch.nn.modules.activation.ReLU'>,7,150,20,0.001
+Accuracy=0.5968672712283595
+<class 'torch.nn.modules.activation.ReLU'>,7,150,20,0.0001
+Accuracy=0.5952184666117065
+<built-in method tanh of type object at 0x00007FFF14A05630>,1,50,1,0.01

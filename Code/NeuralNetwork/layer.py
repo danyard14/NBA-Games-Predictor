@@ -65,7 +65,6 @@ class SoftMaxLayer(Layer):
         """
         self.X = X.copy()
         out = self.activation(self.W @ X + self.b)
-
         return out
 
     def backward(self, V=None):
