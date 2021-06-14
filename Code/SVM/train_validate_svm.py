@@ -9,7 +9,7 @@ from Utils.names import *
 if __name__ == '__main__':
     X_train, Y_train = data_loader.encode_data(TRAIN_DATA_PATH, TRAIN_ALLSTAR_PATH, TRAIN_STANDINGS_PATH)
     X_test, Y_test = data_loader.encode_data(TEST_DATA_PATH, TEST_ALLSTAR_PATH, TEST_STANDINGS_PATH)
-
+    
     tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
                          'C': [1, 10, 100, 1000]},
                         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
